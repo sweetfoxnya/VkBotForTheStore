@@ -72,7 +72,7 @@ def get_basket(vkid):
 def home():
     key = VkKeyboard(one_time=True)
     key.add_button('Режим пользователя👥', color=VkKeyboardColor.SECONDARY)
-    key.add_button('код', color=VkKeyboardColor.SECONDARY)
+    key.add_button('На главную 🏠', color=VkKeyboardColor.SECONDARY)
     return key
 
 def get_order(userid):
@@ -91,7 +91,7 @@ def get_order_all():
     for order in orders:
         key.add_button(str(order[0]) + " ⚒", color=VkKeyboardColor.SECONDARY)
         key.add_line()
-    key.add_button('код', color=VkKeyboardColor.SECONDARY)
+    key.add_button('На главную 🏠', color=VkKeyboardColor.SECONDARY)
     return key
 
 
@@ -162,8 +162,10 @@ def get_list(num):
         name = product_names[i]
         keys.add_button(name + " ✅", color=VkKeyboardColor.SECONDARY)
         keys.add_line()
-    keys.add_button("Ещё 🚀")
+    keys.add_button("Ещё ⏩")
     keys.add_button("Поиск 🔎")
+    keys.add_line()
+    keys.add_button("На главную 🏡")
     return keys
 
 def get_list_search(name):
@@ -208,9 +210,9 @@ def get_name_search(name):
 
 def get_name_change():
     key = VkKeyboard(one_time=True)
-    key.add_button('Удалить товар 💥', color=VkKeyboardColor.SECONDARY)
+    key.add_button('Удалить товар ❌', color=VkKeyboardColor.SECONDARY)
     key.add_line()
-    key.add_button('Добавить товар 👍', color=VkKeyboardColor.SECONDARY)
+    key.add_button('Добавить товар ✔', color=VkKeyboardColor.SECONDARY)
     return key
 
 def get_name_vkid(vkid):  # TODO
